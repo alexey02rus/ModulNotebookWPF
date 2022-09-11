@@ -189,5 +189,31 @@ namespace Task1
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        private void window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (isChanged)
+            {
+                MessageBoxResult result = MessageBox.Show("Сохранить внесенные изменения?", "Сохранение данных", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes && fileName == "")
+                {
+                    SaveFileAs(textBox, window, ref fileName, ref isChanged);
+                    Application.Current.Shutdown();
+                }
+                else if (result == MessageBoxResult.Yes && fileName != "")
+                {
+                    SaveFile(textBox, fileName, ref isChanged);
+                    Application.Current.Shutdown();
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    Application.Current.Shutdown();
+                }
+            }
+            else
+            {
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

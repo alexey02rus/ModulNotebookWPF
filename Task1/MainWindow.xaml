@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task1"
         mc:Ignorable="d"
-        x:Name="window" Title="NoteBook" Height="450" Width="800" Icon="vector-notepad-icon.jpg">
+        x:Name="window" Title="NoteBook" Height="450" Width="800" Icon="vector-notepad-icon.jpg" Closing="window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -57,6 +57,6 @@
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="14" FontFamily="Arial" TextWrapping="Wrap" BorderThickness="2" VerticalScrollBarVisibility="Auto" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="14" FontFamily="Arial" TextWrapping="Wrap" BorderThickness="2" VerticalScrollBarVisibility="Auto" TextChanged="textBox_TextChanged" AcceptsReturn="True"/>
     </Grid>
 </Window>
