@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Task1"
         mc:Ignorable="d"
         x:Name="window" Title="NoteBook" Height="450" Width="800" Icon="vector-notepad-icon.jpg" Closing="window_Closing">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="MenuItem_Open"/>
+        <CommandBinding Command="Save" Executed="MenuItem_Save"/>
+        <CommandBinding Command="SaveAs" Executed="MenuItem_SaveAs"/>
+        <CommandBinding Command="New" Executed="MenuItem_NewWindow"/>
+        <CommandBinding Command="Close" Executed="MenuItem_CloseWindow"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,12 +22,12 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Background="#FFEEF5FD" BorderThickness="0,0,0,1" BorderBrush="#FFC0C6CD">
                 <MenuItem Header="_Файл">
-                    <MenuItem Header="_Открыть" Click="MenuItem_Click"/>
-                    <MenuItem Header="_Сохранить" Click="MenuItem_Click_2"/>
-                    <MenuItem Header="Сохранить как" Click="MenuItem_Click_1"/>
-                    <MenuItem Header="_Новое окно" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Открыть" Command="Open"/>
+                    <MenuItem Header="_Сохранить" Command="Save"/>
+                    <MenuItem Header="Сохранить как" Command="SaveAs"/>
+                    <MenuItem Header="_Новое окно" Command="New"/>
                     <Separator/>
-                    <MenuItem Header="Выход" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="Выход" Command="Close"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
