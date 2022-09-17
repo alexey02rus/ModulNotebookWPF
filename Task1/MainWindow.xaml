@@ -29,6 +29,13 @@
                     <Separator/>
                     <MenuItem Header="Выход" Command="Close"/>
                 </MenuItem>
+                <MenuItem Header="_Правка">
+                    <MenuItem Header="_Отменить" Command="Undo" CommandTarget="{Binding ElementName=textBox}"/>
+                    <MenuItem Header="_Повторить" Command="Redo" CommandTarget="{Binding ElementName=textBox}"/>
+                    <MenuItem Header="_Копировать" Command="Copy" CommandTarget="{Binding ElementName=textBox}"/>
+                    <MenuItem Header="_Вставить" Command="Paste" CommandTarget="{Binding ElementName=textBox}"/>
+                    <MenuItem Header="_Выделить всё" Command="SelectAll" CommandTarget="{Binding ElementName=textBox}"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
         <ToolBarTray Grid.Row="1">
