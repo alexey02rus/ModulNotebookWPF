@@ -41,16 +41,8 @@
         </DockPanel>
         <ToolBarTray Grid.Row="1">
             <ToolBar Margin="0,5,0,3" Padding="0,5">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged">
-                    <TextBlock Text="Arial" FontSize="14"/>
-                    <TextBlock Text="Times New Roman" FontSize="14"/>
-                    <TextBlock Text="Verdana" FontSize="14"/>
-                </ComboBox>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="1" Width="50" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_1">
-                    <TextBlock Text="12" FontSize="14"/>
-                    <TextBlock Text="14" FontSize="14"/>
-                    <TextBlock Text="16" FontSize="14"/>
-                </ComboBox>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{StaticResource fonts}"/>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{StaticResource sisez}"/>
             </ToolBar>
             <ToolBar Margin="0,5,0,3" Padding="0,5">
                 <ToggleButton Click="ToggleButton_Click">
