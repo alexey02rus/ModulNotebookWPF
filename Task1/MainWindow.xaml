@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task1"
         mc:Ignorable="d"
-        x:Name="window" Title="NoteBook" Height="450" Width="800" Icon="vector-notepad-icon.jpg" Closing="window_Closing">
+        x:Name="window" Title="NoteBook" Height="450" Width="800" Icon="vector-notepad-icon.jpg" Closing="window_Closing" Style="{DynamicResource windowStyle}">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="MenuItem_Open"/>
         <CommandBinding Command="Save" Executed="MenuItem_Save"/>
@@ -20,8 +20,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <DockPanel>
-            <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Background="#FFEEF5FD" BorderThickness="0,0,0,1" BorderBrush="#FFC0C6CD">
-                <MenuItem Header="_Файл">
+            <Menu DockPanel.Dock="Top" VerticalAlignment="Top"  BorderThickness="0,0,0,1">
+                <MenuItem Header="_Файл" Margin="2">
                     <MenuItem Header="_Открыть" Command="Open"/>
                     <MenuItem Header="_Сохранить" Command="Save"/>
                     <MenuItem Header="Сохранить как" Command="SaveAs"/>
@@ -29,7 +29,7 @@
                     <Separator/>
                     <MenuItem Header="Выход" Command="Close"/>
                 </MenuItem>
-                <MenuItem Header="_Правка">
+                <MenuItem Header="_Правка" Margin="2">
                     <MenuItem Header="_Отменить" Command="Undo" CommandTarget="{Binding ElementName=textBox}"/>
                     <MenuItem Header="_Повторить" Command="Redo" CommandTarget="{Binding ElementName=textBox}"/>
                     <Separator/>
@@ -41,8 +41,8 @@
         </DockPanel>
         <ToolBarTray Grid.Row="1">
             <ToolBar Margin="0,5,0,3" Padding="0,5">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{StaticResource fonts}"/>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{StaticResource sisez}"/>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" FontSize="14" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{StaticResource fonts}" Style="{DynamicResource ComboBoxStyle}"/>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{StaticResource sisez}" Style="{DynamicResource ComboBoxStyle}"/>
             </ToolBar>
             <ToolBar Margin="0,5,0,3" Padding="0,5">
                 <ToggleButton Click="ToggleButton_Click">
@@ -60,10 +60,13 @@
             <ToolBar Margin="0,5,0,3" Padding="0,5">
                 <StackPanel VerticalAlignment="Center">
                     <RadioButton Content="Черный" IsChecked="True" FontSize="14" VerticalContentAlignment="Center" Padding="5,0,0,0" Margin="2" Width="80" Checked="RadioButton_Checked"/>
-                    <RadioButton Content="Красный" FontSize="14" Foreground="Red" VerticalContentAlignment="Center" Padding="5,0,0,0" Margin="2" Width="80" Checked="RadioButton_Checked_1"/>
+                    <RadioButton Content="Красный" FontSize="14" VerticalContentAlignment="Center" Padding="5,0,0,0" Margin="2" Width="80" Checked="RadioButton_Checked_1"/>
                 </StackPanel>
             </ToolBar>
+            <ToolBar Margin="0,5,0,3" Padding="0,5">
+                <ComboBox Name="themes" Margin="5" Padding="5" SelectedIndex="0" Width="120" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_2" ItemsSource="{StaticResource theme}" Style="{DynamicResource ComboBoxStyle}"/>
+            </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="14" FontFamily="Arial" TextWrapping="Wrap" BorderThickness="2" VerticalScrollBarVisibility="Auto" TextChanged="textBox_TextChanged" AcceptsReturn="True"/>
+        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="14" FontFamily="Arial" TextWrapping="Wrap" BorderThickness="2" VerticalScrollBarVisibility="Auto" TextChanged="textBox_TextChanged" AcceptsReturn="True" Style="{DynamicResource textBoxStyle}" Background="{x:Null}"/>
     </Grid>
 </Window>

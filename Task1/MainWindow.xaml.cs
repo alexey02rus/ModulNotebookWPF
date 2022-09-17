@@ -45,6 +45,14 @@ namespace Task1
             }
         }
 
+        private void ComboBox_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Uri theme = new Uri(themes.SelectedIndex == 0? "Light.xaml": "Dark.xaml", UriKind.Relative);
+            ResourceDictionary themeDictionary = Application.LoadComponent(theme) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Add(themeDictionary);
+        }
+
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             if (textBox.FontWeight == FontWeights.Bold)
@@ -220,5 +228,7 @@ namespace Task1
                 e.Cancel = false;
             }
         }
+
+
     }
 }

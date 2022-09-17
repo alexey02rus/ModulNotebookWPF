@@ -15,4 +15,8 @@
         <sys:Double>18</sys:Double>
         <sys:Double>20</sys:Double>
     </col:ArrayList>
+    <col:ArrayList x:Key="theme">
+        <sys:String>Светлая тема</sys:String>
+        <sys:String>Темная тема</sys:String>
+    </col:ArrayList>
 </ResourceDictionary>
