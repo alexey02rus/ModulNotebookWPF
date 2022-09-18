@@ -10,6 +10,7 @@
     <Style x:Key="textBoxStyle">
         <Setter Property="TextBox.Background" Value="{StaticResource textBoxСolor}"/>
         <Setter Property="TextBox.BorderBrush" Value="{StaticResource backgroundСolor}"/>
+        <Setter Property="TextBox.CaretBrush" Value="{StaticResource textColor}"/>
     </Style>
     <Style TargetType="Menu">
         <Setter Property="Background" Value="{StaticResource backgroundСolor}"/>

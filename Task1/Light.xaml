@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--Background="#FFEEF5FD" BorderBrush="#FFC0C6CD"-->
     <SolidColorBrush x:Key="backgroundСolor" Color="#FFEEF5FD"/>
     <SolidColorBrush x:Key="textBoxСolor" Color="White"/>
     <SolidColorBrush x:Key="BorderBrushСolor" Color="#FFC0C6CD"/>
@@ -11,6 +10,7 @@
     <Style x:Key="textBoxStyle">
         <Setter Property="TextBox.Background" Value="{StaticResource textBoxСolor}"/>
         <Setter Property="TextBox.BorderBrush" Value="{StaticResource backgroundСolor}"/>
+        <Setter Property="TextBox.CaretBrush" Value="{StaticResource textColor}"/>
     </Style>
     <Style TargetType="Menu">
         <Setter Property="Background" Value="{StaticResource backgroundСolor}"/>

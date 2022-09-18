@@ -47,6 +47,13 @@ namespace Task1
 
         private void ComboBox_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
         {
+            if (textBox != null && textBox.Foreground != Brushes.Red)
+            {
+                if (themes.SelectedIndex == 0)
+                    textBox.Foreground = Brushes.Black;
+                else
+                    textBox.Foreground = Brushes.WhiteSmoke;
+            }
             Application.Current.Resources.MergedDictionaries.Clear();
             Uri theme = new Uri(themes.SelectedIndex == 0? "Light.xaml": "Dark.xaml", UriKind.Relative);
             ResourceDictionary themeDictionary = Application.LoadComponent(theme) as ResourceDictionary;
@@ -80,7 +87,12 @@ namespace Task1
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
-                textBox.Foreground = Brushes.Black;
+            {
+                if (themes.SelectedIndex == 0)
+                    textBox.Foreground = Brushes.Black;
+                else
+                    textBox.Foreground = Brushes.WhiteSmoke;
+            }
         }
 
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
