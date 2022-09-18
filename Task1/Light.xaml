@@ -37,5 +37,6 @@
     <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
         <Setter Property="Background" Value="{StaticResource textBoxСolor}"/>
         <Setter Property="Foreground" Value="{StaticResource textColor}"/>
+        <Setter Property="SelectedIndex" Value="0"/>
     </Style>
 </ResourceDictionary>

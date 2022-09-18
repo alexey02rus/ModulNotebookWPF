@@ -54,10 +54,10 @@ namespace Task1
                 else
                     textBox.Foreground = Brushes.WhiteSmoke;
             }
-            Application.Current.Resources.MergedDictionaries.Clear();
-            Uri theme = new Uri(themes.SelectedIndex == 0? "Light.xaml": "Dark.xaml", UriKind.Relative);
+            Uri theme = new Uri(themes.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml", UriKind.Relative);
             ResourceDictionary themeDictionary = Application.LoadComponent(theme) as ResourceDictionary;
             Application.Current.Resources.MergedDictionaries.Add(themeDictionary);
+            Application.Current.Resources.MergedDictionaries.RemoveAt(1);
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
@@ -104,6 +104,7 @@ namespace Task1
         {
             isChanged = true;
         }
+       
         private bool isChanged;
         private string fileName = "";
 
@@ -208,8 +209,11 @@ namespace Task1
         }
         private void MenuItem_NewWindow(object sender, RoutedEventArgs e)
         {
+            //int themeIndex = themes.SelectedIndex;
             MainWindow mainWindow = new MainWindow();
+            //mainWindow.themes.SelectedIndex = themeIndex;
             mainWindow.Show();
+
         }
         private void MenuItem_CloseWindow(object sender, RoutedEventArgs e)
         {

@@ -64,7 +64,7 @@
                 </StackPanel>
             </ToolBar>
             <ToolBar Margin="0,5,0,3" Padding="0,5">
-                <ComboBox Name="themes" Margin="5" Padding="5" SelectedIndex="0" Width="120" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_2" ItemsSource="{StaticResource theme}" Style="{DynamicResource ComboBoxStyle}"/>
+                <ComboBox Name="themes" Margin="5" Padding="5" Width="120" FontSize="14" SelectionChanged="ComboBox_SelectionChanged_2" ItemsSource="{StaticResource theme}" Style="{DynamicResource ComboBoxStyle}"/>
             </ToolBar>
         </ToolBarTray>
         <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" FontSize="14" FontFamily="Arial" TextWrapping="Wrap" BorderThickness="2" VerticalScrollBarVisibility="Auto" TextChanged="textBox_TextChanged" AcceptsReturn="True" Style="{DynamicResource textBoxStyle}" Background="{x:Null}"/>

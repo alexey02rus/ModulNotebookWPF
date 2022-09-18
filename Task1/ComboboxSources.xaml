@@ -19,4 +19,5 @@
         <sys:String>Светлая тема</sys:String>
         <sys:String>Темная тема</sys:String>
     </col:ArrayList>
+    
 </ResourceDictionary>
