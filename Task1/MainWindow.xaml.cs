@@ -27,23 +27,23 @@ namespace Task1
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (textBox != null)
-            {
-                string fontName = (sender as ComboBox).SelectedItem as string;
-                textBox.FontFamily = new FontFamily(fontName);
-            }
-        }
+        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (textBox != null)
+        //    {
+        //        string fontName = (sender as ComboBox).SelectedItem as string;
+        //        textBox.FontFamily = new FontFamily(fontName);
+        //    }
+        //}
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            if (textBox != null)
-            {
-                double fontSize = Convert.ToDouble((sender as ComboBox).SelectedItem);
-                textBox.FontSize = fontSize;
-            }
-        }
+        //private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (textBox != null)
+        //    {
+        //        double fontSize = Convert.ToDouble((sender as ComboBox).SelectedItem);
+        //        textBox.FontSize = fontSize;
+        //    }
+        //}
 
         private void ComboBox_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
         {
